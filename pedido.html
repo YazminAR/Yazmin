@@ -1,31 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <title>Pagina 1</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.cdnfonts.com/css/project-space" rel="stylesheet">
+                
+    <title>Inicio</title>
 </head>
 <body>
     <div style="margin: 24px;">
         <nav class="navbar navbar-inverse navbar-stick-static-top">
             <div class="container">
-               <a class="navbar-brand" href="index.html">Inicio</a>
-               <ul class="nav navbar-nav">
-                  <li>
-                    <a href="menu.html">Menu</a>
-                  </li>
-                  <li>
-                     <a href="pedido.html">Pedido</a>
-                  </li>
-                  <li>
-                     <a href="contacto.html">Contacto</a>
-                  </li>
-               </ul>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">inicio</a>
+                    </li>
+                    <li>
+                        <a href="menu.html">menu</a>
+                    </li>
+                    <li>
+                        <li class="active">
+                        <a href="pedido.html">pedido</a>
+                    </li>
+                    <li>
+                        <a href="contacto.html">contacto</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
+         </nav>
     </div>
-    <h1>pedido</h1>
+    <titulo1>pedido</titulo1><br>
+
+    <form id="pedido">
+<p>Nombre: <input type="text" id="nombre" name="nombre" size="30"></p>
+<p>Apellido: <input type="text" id="apellido" name="apellido" size="30"></p>
+<p>Telefono: <input type="text" id="telefono" name="telefono" size="20"></p>
+<p>Direccion: <input type="text" id="direccion" name="direccion" size="30"></p>    
+<p>Colonia: <input type="text" id="colonia" name="colonia" size="30"></p>
+<hr>
+<select name="menu" id="menu">
+    <optgroup label="Sandwhich">
+    <option value="Sandwhich de jamon">Sandwhich de jamon</option>
+
+    </optgroup>
+    <optgroup label="Torta">
+        <option value="Torta de pollo">Torta de pollo</option>
+    </optgroup>
+    <optgroup label="Carne">
+        <option value"Estilo sirlon">Estilo sirlon</option>
+    </optgroup>
+    <optgroup label="Tacos">
+        <option value="Tacos de bistec">Tacos de bistec</option>
+    </optgroup>
+    <optgroup label="Pizza">
+        <option value="peperoni">peperoni</option>
+    </optgroup>
+    <optgroup label="arroz con leche">
+        <option value="arroz con leche clasica">arroz con leche clasica</option>
+    </optgroup>
+    <optgroup label="pays">
+        <option value="De queso">De queso</option>
+        <option value="De limon">De limon</option>
+        <option value="De manzana">De manzana</option>
+    </optgroup>
+    <optgroup label="Chocoflan">
+        <option value="Chocoflan clasico">Chocoflan clasico</option>
+    </optgroup>
+    <optgroup label="Bebidas">
+        <option value="Agua 600ml">Agua 600ml</option>
+        <option value="Coca cola">Coca cola</option>
+        <option value="Tecate">Tecate</option>
+        <option value="Pepsi">Pepsi</option>
+        <option value="Ultra">Ultra</option>
+        <option value="Agua de horchata">Agua de horchata</option>
+        <option value="Agua de jamaica">Agua de jamaica</option>
+    </optgroup>
+
+</select>
+
+       <titulo1>verduras</titulo1><br>
+       vegetales:
+       <input type="checkbox"id="tomate"checked><label for="tomate">tomate</label>
+       <input type="checkbox"id="cebolla"checked><label for="cebolla">Cebolla</label>
+       <input type="checkbox"id="pepinos"checked><label for="pepinos">Pepino</label>
+       <input type="checkbox"id="lechuga"checked><label for="lechuga">Lechuga</label>
+
+       <br>
+<input type="submit"value="enviar">
+<input type="reset"value="borrar">
+    </form>
+    <script>
+        const form=document.getElementById("pedido");
+        form.addEventListener("submit",function (event){ 
+        event.preventDefault();
+        const formData=new FormData (form);
+        const orden={
+            nombre:formData.get("nombre"),
+            apellido:formData.get("apellido"),
+            telefono:formData.get("telefono"),
+            direccion:formData.get("direccion"),
+            colonia:formData.get("colonia"),
+            tomate:document.getElementById("tomate").checked ? "Si": "No",
+            cebolla:document.getElementById("cebolla").checked ? "Si": "No",
+            lechuga:document.getElementById("lechuga").checked ? "Si": "No",
+            pepinos:document.getElementById("pepinos").checked ? "Si": "No"
+
+ };
+        localStorage.setItem ("orden",JSON.stringify(orden));
+        window.location.href="pedidorealizado.html"; 
+    });
+        </script>
 </body>
 </html>
