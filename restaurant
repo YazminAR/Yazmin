@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <title>The Lili</title>
+</head>
+<body background="https://i.pinimg.com/736x/93/6b/e5/936be505a49e38aef67094517345d2e5.jpg">
+   <div style="margin: 24px;">
+    <nav class="navbar navbar-inverse navbar-stick-static-top">
+        <div class="container">
+            <a class="navbar=brand" href="index.html">Inicio</a>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="menu.html">Menu</a>
+                </li>
+                <li>
+                    <a href="pedido.html">Pedido</a>
+                </li>
+                <li>
+                <a href="contacto.html">contacto</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<h1 style="text-align: center;">Menu</h1>
+<div id="menu"></div>
+<script>
+    fetch('menu.json')
+    .then(response )
+</script>
+
+</body>
+</html>
+
+
+Menu.json
+{"menu":{
+    "id":1,
+    "nombre":"hamburguesa",
+    "descripcion":"es una carne y papas",
+    "precio":"80",
+    "imagen":"https://www.hogar.mapfre.es/media/2018/09/hamburguesa-sencilla.jpg"
+},
+{
+    "id":2,
+    "nombre":"tacos de papa",
+    "descripcion":"es tortilla y papa",
+    "precio":"25",
+    "imagen":"https://d1nsq2txwd94q7.cloudfront.net/public/files…n/recipes/images/1131/thumb/r_1131_1550836365.jpg"
+},
+
+}
