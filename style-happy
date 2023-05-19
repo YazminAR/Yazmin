@@ -1,0 +1,71 @@
+body{
+    background-color: rgb(221, 99, 184);
+}
+header{
+    background-color: rgba(224, 31, 31, 0.281);
+    padding: 25px;
+}
+nav{
+    background-color: deeppink;
+    padding: 10px;
+}
+section{
+    background-color: rgb(139, 21, 248);
+}
+article{
+    background-color: rgb(180, 92, 224);
+}
+aside{
+    background-color: hotpink;
+    width: 30%;
+    float: right;
+}
+footer{
+    background-color: rgba(172, 36, 172, 0.719);
+            color: aliceblue;
+            padding: 30px 0;
+        }
+        .container{
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-content{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .footer-section{
+        width: 100%;
+        padding: 2px;
+        box-sizing: border-box;
+        }
+        .about{
+        text-align: center;
+        }
+        .about h2{
+            margin-bottom: 20px;
+        }
+        .about p{
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .contact-links{
+            display: flex;
+            justify-content: center;
+        }
+        .contact-links a{
+            display: inline-block;
+            color: bisque;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        .contact-links a:hover{
+            transform: translateY(-5px);
+        }
+        img{
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+        }
